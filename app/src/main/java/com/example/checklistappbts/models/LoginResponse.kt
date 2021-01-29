@@ -15,5 +15,5 @@ data class LoginResponse (
     var token: String? = null,
 
     @SerializedName("data")
-    var data: JSONObject? = null
+    var data: DataResponse
 )

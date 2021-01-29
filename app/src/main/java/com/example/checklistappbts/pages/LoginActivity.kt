@@ -37,8 +37,8 @@ class LoginActivity : AppCompatActivity() {
             loginCall?.enqueue(object : Callback<LoginResponse> {
                 override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
                     if (response.isSuccessful){
-                        val message = response.body()!!.data
-                        Log.d("message", message!!.toString())
+                        val message = response.body()!!.data.token
+                        Log.d("message", message!!)
                         Toast.makeText(applicationContext, "Logged In", Toast.LENGTH_SHORT).show()
                         startActivity(Intent(this@LoginActivity, ChecklistActivity::class.java))
                     } else {
